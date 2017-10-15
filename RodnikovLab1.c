@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 		printf("Enter value in degrees\n");
 		scanf("%f", &fa);
 		printf("Enter char C, K or F or press Enter key\n");
-		c = _getch();
+		c = getch();
   }
   if ((argc == 2) || (argc == 3)) {
 		fa = atof(argv[1]);
