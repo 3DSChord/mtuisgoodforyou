@@ -4,7 +4,7 @@
 /* Группа: ИКБО-05-17 */
 /* Language: C */
 /* Windows compiler: Microsoft Visual C++ 2010 Express */
-/* Linux compiler: gcc -std=c89 -march=core2 */
+/* Linux compiler: gcc -std=c89 -Wall -Werror -Wextra */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 		printf("Enter value in degrees\n");
 		scanf("%f", &fa);
 		printf("Enter char C, K or F or press [Enter] key\n");
-		while ((c = getchar()) != '\n' && c != EOF)	{};
+		while ((c = getchar()) != '\n')	{};
 		clearerr(stdin);
 		c = getchar();
 	}
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 		retvalue = printresults('K', 'C', 'F', fk, fc, ff);
 	}
 	printf("Press [Enter] key to exit ...\n");
-	while ((c = getchar()) != '\n' && c != EOF) {};
+	while ((c = getchar()) != '\n') {};
 	clearerr(stdin);
 	getchar();
 	return retvalue;
