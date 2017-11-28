@@ -70,7 +70,6 @@ int main (void)
 	while (!((arithOperator ==  'q') || (arithOperator == 'Q'))) {
 		if (s->top < 2) {
 			printf("Stack size is less than 2. No more actions are possible. Run the program again.\nPress [Enter] to exit.");
-			getchar();
 			break;
 		}
 		printf("Enter an operator (+, -, *, /) or [Q] or [q] to quit: ");
@@ -102,6 +101,8 @@ int main (void)
 			printStack(s);
 			break;
 		case '/':
+            		secondNumber = peek(s);
+            		if (secondNumber == 0) {printf("Divide by zero is not allowed!\n"); clearerr(stdin); getchar(); continue;}
 			secondNumber = pop(s);
 			firstNumber = pop(s);
 			result = firstNumber / secondNumber;
@@ -109,6 +110,10 @@ int main (void)
 			push(s, result);
 			printStack(s);
 			break;
+        case 'q':
+            continue;
+        case 'Q':
+            continue;
 			/* operator doesn't match any case constant (+, -, *, /) */
 		default:
 			printf("Error! operator is not correct\n");
@@ -121,9 +126,8 @@ int main (void)
 	} /* while */
 
 	deleteStack(&s);
-	while ((c = getchar()) != '\n') {};
 	clearerr(stdin);
-	getchar();
+	while ((c = getchar()) != '\n') {};
 
 	return 0;
 
