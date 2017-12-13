@@ -56,7 +56,7 @@ int main()
 
 		printMatrix((int *)&leftMatrix, leftRows, leftColumns);
 
-		printf("Finding a row and a column with the lowest element value and delete them:\n", leftRows);
+		printf("Finding a row and a column with the lowest element value and delete them:\n");
 		minrow = 0;
 		mincol = 0;
 		k = leftMatrix[0];
